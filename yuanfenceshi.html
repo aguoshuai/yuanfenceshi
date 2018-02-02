@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="index.js"></script>
+    <title>缘来是你</title>
+</head>
+<script>
+		var pixelRatio = 1 / window.devicePixelRatio;   
+		document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio+',maximum-scale='+pixelRatio+'" />');//动态控制像素比
+		var html=document.getElementsByTagName('html')[0];
+		var pageWidth=html.getBoundingClientRect().width;
+		html.style.fontSize=pageWidth/10+"px";
+	</script>
+
+<body>
+    <div class="zong-kuang">
+        <span class="logo"><img src="images/timg.jpg"></span>
+        <h2 class="biao-ti">缘来是你</h2>
+        <p class="uesr-name">请输入你的姓名: <input type="text"  value="" id="input1" ></p>
+        <p class="lover-name">请输入你暗恋的对象姓名: <input type="text"  value="" id="input2"></p>
+        <button class="dianji-tijiao" >点击测试你的表白成功率</button>
+        <div id="jieguo-kuang"></div>
+    </div>
+</body>
+</html>
