@@ -9,52 +9,69 @@ $(function(){
 $('.dianji-tijiao').click(function(){
     var Ipt1=Value1.value;
     var Ipt2=Value2.value;
-    var Ipt3='';
-    if((Ipt1!=='卢倩'||Ipt1!=='胡庆国')&&(Ipt2!=='卢倩'||Ipt2!=='胡庆国')){
-        Ipt3='0%';
-    }
-    if(Ipt2=="卢倩"){
-        Ipt3="0%"
-    }
-    if(Ipt1=='胡庆国'){
-        Ipt3='100%';
-    }
+    var Ipt3= Math.ceil(Math.random()*100);
+  
     
-    if(Ipt1=='卢倩'){
-        Ipt3='0%';
+    if(Ipt1==''){
+        alert('请输入你的姓名');
+       return;
     }
-    if(Ipt2=='胡庆国'){
-        Ipt3='100%';
+    if(Ipt1=="胡庆国"){
+        Ipt3=100;
+    //    return;
     }
+    if(Ipt2==''){
+        alert('请输入你暗恋的对象的姓名');
+        return;
+    }
+    if(Ipt1==Ipt2){
+        alert('你太自恋了')
+        return;
+    }
+ 
+    
+    if(Ipt3<50){
+        Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"成功率一半都没到,还是放弃吧！哈哈"
+      
+    }else if(Ipt3>50 && Ipt3<=70){
+        Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"还不错，好好加油！"
+       
+    }else if(Ipt3>70 && Ipt3<90){
+        Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"去吧，我等着喝喜酒了！"
+        
+    }else if(Ipt3>=90 &&Ipt3<100){
+        Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"哇！你这成功率也太高了吧"
+    
+    }else if(Ipt3=100){
+        Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"如果你有勇气，ta已经是你的了！！！" 
+    }else if(Ipt3=50){
+        Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"一半一半，看运气喽！" 
+    }
+    // else if(Ipt3>50 && Ipt3<=70){
+    //     Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"还不错，好好加油！"
+       
+    // }else if(Ipt3>70 && Ipt3<90){
+    //     Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"去吧，我等着喝喜酒了！"
+     
+    // }else if(Ipt3>=90 &&Ipt3<100){
+    //     Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"哇！你这成功率也太高了吧"
+    
+    // }else if(Ipt3=100){
+    //     Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3+"%"+"<br/>"+"如果你有勇气，ta已经是你的了！！！"
+      
+    // }
+      
+
+    })
+
    
-   function isChinese(temp){
-    var re=/[^/u4e00-/u9fa5]/;
-   if (re.test(temp)) return false ;
-   }
-    Txt3.innerHTML=Ipt1+"向"+Ipt2+"表白的成功几率是"+Ipt3;
     
 })
 
-// $('#input1').blur(function(){
-   
-//         if(reg<=Ipt1<=reg){
-//             return true;
-//         }else{
-//             alert('请输入汉字');
-//             Ipt1='';
-//         }
-// })
-// $('#input2').blur(function(){
-   
-//     if(reg<=Ipt1<=reg){
-//         return true;
-//     }else{
-//         alert('请输入汉字');
-//     }
-// })
+
     
 
-});
+
 
 
 
